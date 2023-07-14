@@ -96,9 +96,10 @@ public class Utils {
 	    }
 	}
 
-	public static void stopServer() {
+	public static void stopServer() throws InterruptedException {
 	    Runtime runtime = Runtime.getRuntime();
 	    try {
+	    	Thread.sleep(10000);
 	        runtime.exec("taskkill /F /IM node.exe");
 	        runtime.exec("taskkill /F /IM cmd.exe");
 	    } catch (IOException e) {
@@ -121,6 +122,7 @@ public class Utils {
 	public static void stopAndroidEmulator() throws InterruptedException, IOException {
 	
 		Runtime runtime = Runtime.getRuntime(); 
+		Thread.sleep(10000);
 		   runtime.exec("taskkill /F /IM qemu-system-x86_64.exe");
 	       
     	
