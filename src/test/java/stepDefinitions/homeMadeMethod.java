@@ -45,7 +45,7 @@ public class homeMadeMethod extends Utils {
 		driver.findElement(AppiumBy.accessibilityId(getLocator("login"))).click();
 		
 		stopServer();
-		stopAndroidEmulator();
+		//stopAndroidEmulator();
 		
 	}
 	@Then("plans page opens")
