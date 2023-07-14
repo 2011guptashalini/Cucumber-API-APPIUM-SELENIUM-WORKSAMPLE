@@ -15,7 +15,10 @@ public class homeMadeMethod extends Utils {
 	
 	@SuppressWarnings("deprecation")
 	@Given("User has launched the app and signin page displayed")
-	public void user_has_launched_the_app_and_signin_page_displayed() throws IOException {
+	public void user_has_launched_the_app_and_signin_page_displayed() throws IOException, InterruptedException {
+		
+		startAndroidEmulator();
+		startServer();
 		driver = getMobileDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.findElement(AppiumBy.accessibilityId(getLocator("turn_on_notification"))).click();
@@ -37,14 +40,20 @@ public class homeMadeMethod extends Utils {
 	    
 	}
 	@Then("click on signin button")
-	public void click_on_signin_button() throws IOException {
+	public void click_on_signin_button() throws IOException, InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
 		driver.findElement(AppiumBy.accessibilityId(getLocator("login"))).click();
+		
+		stopServer();
+		stopAndroidEmulator();
+		
 	}
 	@Then("plans page opens")
 	public void plans_page_opens() throws IOException {
 	    // Write code here that turns the phrase above into concrete actions
 		driver.findElement(AppiumBy.accessibilityId(getLocator("plans"))).isDisplayed();
+		
+		
 	}
 
 }
