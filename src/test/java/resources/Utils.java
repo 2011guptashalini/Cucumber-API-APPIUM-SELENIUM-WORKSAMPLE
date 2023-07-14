@@ -123,6 +123,8 @@ public class Utils {
 	
 		Runtime runtime = Runtime.getRuntime(); 
 		Thread.sleep(10000);
+		
+		runtime.exec("taskkill /F /IM crashpad_handler.exe");
 		   runtime.exec("taskkill /F /IM qemu-system-x86_64.exe");
 	       
     	
