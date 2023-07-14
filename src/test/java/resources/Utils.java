@@ -28,6 +28,8 @@ public class Utils {
 	public static RequestSpecification req;
 	public static WebDriver driver;
 	public static AndroidDriver dr;
+	public static Process p;
+	public static ProcessBuilder pb;
 	
 	public  RequestSpecification requestSpecification() throws IOException
 	{
@@ -73,7 +75,8 @@ public class Utils {
 	
 	public AndroidDriver getMobileDriver() throws IOException {
 		
-		//When testing needs to be performed on mobile app, some capabilities will change. 
+		//When testing needs to be performed on mobile app, some capabilities will change.
+		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("deviceName", "Nexus 5X API 33");
 		cap.setCapability("platformName", "Android"); 
@@ -83,6 +86,45 @@ public class Utils {
 		return dr;
 	}
 	
+	public static void startServer() {
+	    Runtime runtime = Runtime.getRuntime();
+	    try {
+	        runtime.exec("cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\"");
+	        Thread.sleep(10000);
+	    } catch (IOException | InterruptedException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+	public static void stopServer() {
+	    Runtime runtime = Runtime.getRuntime();
+	    try {
+	        runtime.exec("taskkill /F /IM node.exe");
+	        runtime.exec("taskkill /F /IM cmd.exe");
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public static void startAndroidEmulator() throws InterruptedException {
+		Runtime runtime = Runtime.getRuntime();
+	    try {
+
+	    	runtime.exec("cmd.exe /c \"cd C:\\Users\\gupta\\AppData\\Local\\Apps\\Android\\sdk\\emulator \" && emulator -avd Nexus_5X_API_33 ");
+	    	   Thread.sleep(20000);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+
+	public static void stopAndroidEmulator() throws InterruptedException, IOException {
+	
+		Runtime runtime = Runtime.getRuntime(); 
+		   runtime.exec("taskkill /F /IM qemu-system-x86_64.exe");
+	       
+    	
+	}
 
 	
 	public static String getLocator(String key) throws IOException

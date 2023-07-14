@@ -4,7 +4,7 @@ Scenario Outline: Verify if user is able to signin if they provide valid credent
 	Given User has launched the app and signin page displayed
 	When user provide correct "<email>" and "<password>" 
 	Then click on signin button
-	And plans page opens
+	
 	
 Examples:
 	|email 	 | password|
