@@ -1,0 +1,182 @@
+Request method:	GET
+Request URI:	https://simple-grocery-store-api.glitch.me/status
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Thu, 13 Jul 2023 16:14:26 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 15
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"f-RQ8OySFd+KR+AvtJ7qImjtT0D/0"
+
+{
+    "status": "UP"
+}
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/api-clients
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "clientName": "com.github.javafaker.Name@45dc7be",
+    "clientEmail": "jeremy.simonis@gmail.com"
+}
+HTTP/1.1 201 Created
+Date: Thu, 13 Jul 2023 16:14:28 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 82
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"52-OC5qEVMCHypPMmOvq0mDK0NowSc"
+
+{
+    "accessToken": "c9e9a35d6149faea80839a836a3e9facd70b9736798ade9911d40974f23087a7"
+}
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/api-clients
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "clientName": "Test",
+    "clientEmail": "test@test.com"
+}
+HTTP/1.1 409 Conflict
+Date: Thu, 13 Jul 2023 16:14:30 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"41-rjAEsJfLskSzU5wzBOncJcKHOOY"
+
+{
+    "error": "API client already registered. Try a different email."
+}
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/api-clients
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "clientName": "Test",
+    "clientEmail": "test@test.com"
+}
+HTTP/1.1 409 Conflict
+Date: Thu, 13 Jul 2023 16:14:32 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"41-rjAEsJfLskSzU5wzBOncJcKHOOY"
+
+{
+    "error": "API client already registered. Try a different email."
+}
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/api-clients
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "clientName": "Test",
+    "clientEmail": ""
+}
+HTTP/1.1 400 Bad Request
+Date: Thu, 13 Jul 2023 16:14:33 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 44
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"2c-PwGtxEQOZiq6R8vQs7E1MW/WeUI"
+
+{
+    "error": "Invalid or missing client email."
+}
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/api-clients
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "clientName": "",
+    "clientEmail": "test@test.com"
+}
+HTTP/1.1 400 Bad Request
+Date: Thu, 13 Jul 2023 16:14:34 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 43
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"2b-l89yYcoVfVJGBAfpD4IpCK5y/wA"
+
+{
+    "error": "Invalid or missing client name."
+}
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/carts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 201 Created
+Date: Thu, 13 Jul 2023 16:14:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 49
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"31-rT8Ow+IceuMUVTqkjKg0H5j75zo"
+
+{
+    "created": true,
+    "cartId": "Jts1m3X3sa3P4q3l7bXu7"
+}
